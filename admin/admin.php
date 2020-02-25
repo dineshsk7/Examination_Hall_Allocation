@@ -1,15 +1,4 @@
-<?php  
-    if(isset($_POST['login']))
-  {
-    require_once('../model/databse.php');
-    require_once('../model/functions.php');
-    $password = $_POST['password'];
-    if(isValidAdminPass($password))
-    {
-      header('Location: admin.php');
-    }
-  }
-  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,14 +16,12 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <h2 style="color: grey;">Enter Your Password</h2>
     </div>
 
     <!-- Login Form -->
-    <form action="" method="POST">
-      <input type="text" id="login" class="fadeIn second" name="password" placeholder="Password">
-      <input type="submit" class="fadeIn fourth" value="submit" name="login">
-    </form>
+    <div class="text-center">
+      <h2 style="color: grey;">Welcome to Admin page</h2>
+    </div>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
