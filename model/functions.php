@@ -41,7 +41,7 @@
 	{
 		global $db;
 		$valid = false;
-		$query = 'Select * from CS_II_A where reg_no = :reg_no';
+		$query = 'Select * from cs_ii_a where reg_no = :reg_no';
 		$statement = $db->prepare($query);
 		$statement->bindValue(':reg_no', $reg_no);
 		$statement->execute();
