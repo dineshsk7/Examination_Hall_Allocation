@@ -1,4 +1,14 @@
 <?php  
+  session_start();
+  if(!isset($_SESSION['admin']))
+  {
+    header('Location: ..');
+  }
+  if(isset($_SESSION['adminlogin']))
+  {
+    header('Location: admin.php');
+  }
+
     if(isset($_POST['login']))
   {
     require_once('../model/databse.php');
@@ -6,6 +16,7 @@
     $password = $_POST['password'];
     if(isValidAdminPass($password))
     {
+      $_SESSION['adminlogin']=$password;
       header('Location: admin.php');
     }
   }
@@ -38,7 +49,10 @@
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <p>All the best!</p>
+          <form class="text-center" action="../logout/index.php" method="POST">
+        <input style= "color: black;background-color: white;" type="submit" name="back" value="back">
+    </form>
+
     </div>
 
   </div>

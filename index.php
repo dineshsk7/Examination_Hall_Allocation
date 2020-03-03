@@ -1,4 +1,10 @@
 <?php
+  session_start();
+  if(isset($_SESSION['admin']))
+  {
+    header('Location: admin/index.php');
+  }
+
   if(isset($_POST['submit']))
   {
     require('model/databse.php');
@@ -6,6 +12,7 @@
     $username = $_POST['reg_no'];
     if(isValidAdminID($username))
     {
+      $_SESSION['admin'] = $username; 
       header('Location: admin/index.php');
     }
     else if(isValidStudentLogin($username))
@@ -14,9 +21,9 @@
       header('Location: student/result.php');  
     }
     else
-    {
-      echo "Username and Password mismatch";
-    }
+    {?>
+      <script>alert("invalid entry");</script>
+   <?php }
   }
 ?>
 
