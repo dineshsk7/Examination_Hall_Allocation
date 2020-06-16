@@ -1,4 +1,10 @@
-
+<?php
+    session_start();
+    if(!isset($_SESSION['student']))
+    {
+        header('Location: ..');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,14 +26,21 @@
 
     <!-- Login Form -->
     <div class="text-center">
-      <h2 style="color: grey;">Welcome to student page</h2>
+      <h2 style="color: grey;">Re-Enter Your Regno</h2>
     </div>
+    <form action="final_one.php" method="POST">
+      <input type="text"  class="fadeIn second" name="s_id">
+      <input type="submit" class="fadeIn fourth" value="Enter" name="enter">
+    </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <p>All the best!</p>
-    </div>
+    <form class="text-center" action="../logout/index.php" method="POST">
+        <input type="submit" style= "color: black;background-color: white;" name="back" value="back">
+    </form>
 
+    </div>
+     <p>All the best!</p>
   </div>
 </div>
 </body>

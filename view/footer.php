@@ -1,8 +1,8 @@
-div id="footer">
-            <p class="copyright">
-                &copy; <?php echo date("Y"); ?> about:<a href="http://rvscas.ac.in">rvscas.ac.in</a>
+               </br> &copy; <?php echo date("Y"); ?> </br>about:<a style="color: blue;" href="http://rvscas.ac.in">&nbsp;rvscas.ac.in</a>
             </p>
         </div>
-    </div><!-- end page -->
-    </body>
+
+  </div>
+</div>
+</body>
 </html>

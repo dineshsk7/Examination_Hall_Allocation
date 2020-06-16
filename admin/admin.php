@@ -1,72 +1,80 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Admin page</title>
-</head>
-<style>
-    .container{
-        width:100%;
-        height:auto;
-        display:flex;
-        flex-direction: row;
-        justify-content: space-around;
-        flex-flow: wrap;
+<?php
+    session_start();
+    if(!isset($_SESSION['adminlogin']))
+    {
+        header('Location: ..');
         
     }
-    .ah{
-        width:40%;
-        margin-left:10%;
-        box-sizing:border-box;
-        font-size:50px;
-        text-align: center;
-        padding-left: 10%;
-        margin-top: 40px;
-    }
-    .s{
-        width:40%;
-        margin-right: 10%;
-        box-sizing:border-box;
-        font-size:50px;
-        text-align: center;
-        padding-right: 10%;
-        margin-top: 40px;
-
-    }
-    .i{
-        width:40%;
-        margin-right: 10%;
-        margin-left:10%;
-        box-sizing:border-box;
-        font-size:50px;
-        margin-bottom: 10%;
-        text-align: center;
-    }
-    button{
-        box-sizing: border-box;
-        width: 150px;
-        height: 70px;
-    }
-    h1{
-        text-align: center;
-        font-family: sans-serif;
-        font-weight: 600px;
-        font-size: 40px;
-    }
-    p{
-        font-size: 20px;
-    }
-    b{
-        font-size: 25px;
-    }
-</style>
+    include('../view/header.php');
+?>
 <body>
-    <h1>Admin</h1>
-<div class="container">
-    <div class="ah"><a href="#"><button><b>AH</b></button></a><p>School of Computer Studies</p></div>
-    <div class="s"><a href="#"><button><b>S</b></button></a><p>School of Commerce</p></div>
-    <div class="ah"><a href="#"><button><b>V</b></button></a><p>Life science</p></div>
-    <div class="s"><a href="#"><button><b>R</b></button></a><p>School of Management</p></div>
-    <div class="i"><a href="#"><button><b>I</b></button></a><p>Maths/English</p></div>
+<style>
+    .navbar-static-top {
+  margin-bottom:20px;
+}
+
+i {
+  font-size:16px;
+}
+
+.nav > li > a {
+  color:#787878;
+}
+h2{
+    padding-top:.5em;
+    padding-bottom: .5em;
+    padding-right:1em;
+    padding-left:1em;
+}
+.row{
+    padding-bottom: 5em;
+    padding-top: 5em;
+}
+.btn{
+    color: blue;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black; 
+}
+.btn:hover{
+    box-shadow: 0 0 5px black;
+    border-radius: 15px;
+}
+.panel-heading{
+  border-radius: 20px 20px 0 0;
+}
+.panel-body{
+ border-radius: 0 0 20px 20px; 
+}
+.navbar-header,.navbar-collapse{
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+</style>
+<div class="container-fluid">
+<div class="panel panel-default">
+    <div class="panel-heading" style="background-color: #485461;
+background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+"><h1 class="text-center" style="color: white;"> Blocks</h1></div>
+        <div class="panel-body" style="background-color: #5b6467;
+background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+">
+            <div class="row">
+                <div class="text-center"><div class="col-sm-4"><form action="hall.php" method="POST">
+             <button type="submit" class="btn btn-default" name="block_id" value="AH"><h2>AH</h2></button></form></div></div>
+                <div class="text-center"><div class="col-sm-4"><form action="hall.php" method="POST">
+             <button type="submit" class="btn btn-default" name="block_id" value="I"><h2>I</h2></button></form></div></div>
+                <div class="text-center"><div class="col-sm-4"><form action="hall.php" method="POST">
+             <button type="submit" class="btn btn-default" name="block_id" value="S"><h2>S</h2></button></form></div></div>
+            </div>
+            <div class="row" class="text-center">
+                <div class="text-center"><div class="col-sm-6"><form action="hall.php" method="POST">
+             <button type="submit" class="btn btn-default" name="block_id" value="R"><h2>R</h2></button></form></div></div>
+                <div class="text-center"><div class="col-sm-6"><form action="hall.php" method="POST">
+             <button type="submit" class="btn btn-default" name="block_id" value="V"><h2>V</h2></button></form></div></div>
+            </div>
+
+        </div>
+</div>
 </div>
 </body>
 </html>

@@ -41,7 +41,7 @@
 	{
 		global $db;
 		$valid = false;
-		$query = 'Select * from cs_ii_a where reg_no = :reg_no';
+		$query = 'Select * from result where s_id = :reg_no';
 		$statement = $db->prepare($query);
 		$statement->bindValue(':reg_no', $reg_no);
 		$statement->execute();
@@ -54,6 +54,25 @@
 			$valid = false;
 		}
 		return $valid;
+	} 
+	function getCount($value)
+	{
+		global $db;
+		$count = $db->query("SELECT * FROM $value");
+		$total = $count->rowCount();
+
+		$count = $db->query("SELECT s_id FROM $value where s_id = ''");
+		$erase = $count->rowCount();
+
+		return $total-$erase;
+	}
+	function getResult($value)
+	{
+		global $db;
+		$count = $db->query("SELECT * FROM result WHERE class = '$value'");
+		$total = $count->rowCount();
+
+		return $total;
 	}
 
 ?>
