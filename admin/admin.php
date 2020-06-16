@@ -3,6 +3,27 @@
     if(!isset($_SESSION['adminlogin']))
     {
         header('Location: ..');
+<<<<<<< HEAD
+=======
+    }
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Admin page</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<style>
+    .container{
+        width:100%;
+        height:auto;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
+>>>>>>> 6a914f847e7a20cf0f65977b2292db335b297ef3
         
     }
     include('../view/header.php');
@@ -50,6 +71,7 @@ h2{
   padding-bottom: 20px;
 }
 </style>
+<<<<<<< HEAD
 <div class="container-fluid">
 <div class="panel panel-default">
     <div class="panel-heading" style="background-color: #485461;
@@ -75,6 +97,21 @@ background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
 
         </div>
 </div>
+=======
+<body>
+<div class="container-fluid">
+    <h1 class="text-center">Admin</h1>
+    <form class="text-right" action="../logout/index.php" method="POST">
+            <input type="submit" name="logout" value="Logout">
+    </form>
+</div>
+<div class="container">
+    <div class="ah"><a href="hall.php"><button><b>AH</b></button></a><p>School of Computer Studies</p></div>
+    <div class="s"><a href="../construction.php"><button><b>S</b></button></a><p>School of Commerce</p></div>
+    <div class="ah"><a href="../construction.php"><button><b>V</b></button></a><p>Life science</p></div>
+    <div class="s"><a href="../construction.php"><button><b>R</b></button></a><p>School of Management</p></div>
+    <div class="i"><a href="../construction.php"><button><b>I</b></button></a><p>Maths/English</p></div>
+>>>>>>> 6a914f847e7a20cf0f65977b2292db335b297ef3
 </div>
 </body>
 </html>

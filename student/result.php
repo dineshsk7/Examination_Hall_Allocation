@@ -36,8 +36,15 @@
     <!-- Remind Passowrd -->
     <div id="formFooter">
     <form class="text-center" action="../logout/index.php" method="POST">
+<<<<<<< HEAD
         <input type="submit" style= "color: black;background-color: white;" name="back" value="back">
     </form>
+=======
+        <input type="submit" name="back" value="back">
+    </form>
+
+    </div>
+>>>>>>> 6a914f847e7a20cf0f65977b2292db335b297ef3
 
     </div>
      <p>All the best!</p>

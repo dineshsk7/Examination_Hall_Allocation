@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 25, 2020 at 06:04 AM
+-- Generation Time: Mar 03, 2020 at 04:51 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -25,10 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `CS_II_A`
+-- Table structure for table `block`
 --
 
-CREATE TABLE `CS_II_A` (
+CREATE TABLE `block` (
+  `b_id` varchar(20) NOT NULL,
+  `block` varchar(20) NOT NULL,
+  `strength` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `block`
+--
+
+INSERT INTO `block` (`b_id`, `block`, `strength`) VALUES
+('AH-101', 'AH', '56'),
+('AH-102', 'AH', '60'),
+('AH-103', 'AH', '45'),
+('AH-104', 'AH', '54');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cs_ii_a`
+--
+
+CREATE TABLE `cs_ii_a` (
   `reg_no` varchar(20) NOT NULL,
   `name` varchar(50) NOT NULL,
   `class` varchar(50) NOT NULL,
@@ -36,10 +58,10 @@ CREATE TABLE `CS_II_A` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `CS_II_A`
+-- Dumping data for table `cs_ii_a`
 --
 
-INSERT INTO `CS_II_A` (`reg_no`, `name`, `class`, `year`) VALUES
+INSERT INTO `cs_ii_a` (`reg_no`, `name`, `class`, `year`) VALUES
 ('1u17cs016', 'deepan', 'BSc computer science', '3'),
 ('1u17cs021', 'dineshbabu', 'BSc computer science', '3');
 
@@ -69,9 +91,9 @@ INSERT INTO `staff` (`reg_no`, `admin_pass`, `admin_name`, `admin_email`) VALUES
 --
 
 --
--- Indexes for table `CS_II_A`
+-- Indexes for table `cs_ii_a`
 --
-ALTER TABLE `CS_II_A`
+ALTER TABLE `cs_ii_a`
   ADD PRIMARY KEY (`reg_no`);
 COMMIT;
 
